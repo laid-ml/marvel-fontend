@@ -287,6 +287,8 @@ footer {
   .header-container ul {
     flex-direction: column;
     align-items: flex-start;
+    font-size: 30px;
+    font-weight: bold;
   }
 
   .header-container ul li {
