@@ -13,6 +13,7 @@ const Header = ({
   handleToken,
 }) => {
   // const [search, setSearch] = useState("");
+  const [menuVisible, setMenuVisible] = useState(false);
 
   // setResearch(search);
 

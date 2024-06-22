@@ -100,12 +100,10 @@ header div {
 header ul {
   display: flex;
   gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 header ul li {
+  font-weight: bold;
   margin: 0;
 }
 
@@ -203,7 +201,9 @@ header button {
   border: none;
   padding: 10px 20px;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-weight: bold;
   border-radius: 5px;
+  font-size: 19px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -277,6 +277,7 @@ footer {
   .header-container {
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
   }
 
   .header-container input[type="text"] {
@@ -287,11 +288,13 @@ footer {
   .header-container ul {
     flex-direction: column;
     align-items: flex-start;
-    font-size: 30px;
     font-weight: bold;
   }
 
   .header-container ul li {
     margin: 5px 0;
+  }
+  .header button {
+    font-weight: bold;
   }
 }
