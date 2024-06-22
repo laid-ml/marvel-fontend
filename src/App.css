@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* body {
+  background-color: #d3d3d3;
+}
+
+.container {
+  width: 90%;
+  margin: auto 0px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+header div {
+  display: flex;
+  justify-content: space-between;
+}
+header div ul {
+  display: flex;
+  gap: 20px;
+}
+header img {
+  width: 100px;
+}
+
+main {
+  padding-top: 50px;
+}
+
+.charac img {
+  width: 200px;
+}
+.charac {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 30px;
+  gap: 10px;
+  width: 260px;
+}
+
+main div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+main article {
+  display: flex;
+
+  align-items: flex-end;
+} */
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+/* Header Styling */
+header {
+  background-color: #24292e;
+  color: #fff;
+  /* padding: 10px 0; */
+  display: flex;
+  align-content: center;
+  height: 80px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header img {
+  width: 100px;
+  margin-right: 20px;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+header ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header ul li {
+  margin: 0;
+}
+
+header ul li {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+header ul li :hover {
+  font-size: 1.2em;
+}
+
+header ul li :visited,
+header ul li :active {
+  color: #fff;
+}
+
+header input[type="text"] {
+  padding: 10px;
+  border: none;
+  /* margin-top: 15px; */
+  border-radius: 5px;
+  width: 350px;
+}
+
+/* Main Section Styling */
+main {
+  padding: 50px 0;
+  background-image: url("./assets/MarveAvengers.jfif");
+
+  /* background-color: #a0cbd0; */
+}
+
+main .container {
+  padding: 50px 0;
+  background-image: url("./assets/backgroundimg.jpg");
+
+  background-color: #e0f7fa;
+}
+
+.charac {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 10px;
+  width: 260px;
+  background-color: white;
+  padding: auto;
+}
+
+.charac img {
+  margin-top: 20px;
+  margin-left: 10px;
+  width: 200px;
+}
+.charac p {
+  margin-left: 10px;
+  font-family: "Roboto", sans-serif;
+  margin-top: 8px;
+}
+.charac h2 {
+  margin-left: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+main div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+main article {
+  display: flex;
+  align-items: flex-end;
+}
+
+button {
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+header button {
+  background-color: #24292e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button:active {
+  background-color: #003f7f;
+  transform: translateY(0);
+}
+
+header,
+footer {
+  color: green;
+  font-size: 20px;
+  padding: 20px 50px;
+}
+.App {
+  position: relative;
+}
+.home {
+  padding: 20px 50px;
+  font-size: 20px;
+}
+.modal-root {
+  color: red;
+  /* Pour que la modal prenne tout l'écran : */
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  /* Pour placer la modal tout en haut à gauche une fois en position relative */
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Mettre un background noir et transparent : */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal {
+  background-color: white;
+  width: 150px;
+  height: 200px;
+  padding: 10px 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.modal button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.modal form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal form p {
+  color: red;
+}
