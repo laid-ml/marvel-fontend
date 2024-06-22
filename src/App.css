@@ -273,3 +273,24 @@ footer {
 .modal form p {
   color: red;
 }
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-container input[type="text"] {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .header-container ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-container ul li {
+    margin: 5px 0;
+  }
+}
