@@ -286,7 +286,7 @@ footer {
   }
 
   .header-container ul {
-    flex-direction: column;
+    display: flex;
     align-items: flex-start;
     font-weight: bold;
   }

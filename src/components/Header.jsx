@@ -48,13 +48,15 @@ const Header = ({
                 Signup
               </button>
             </li>
-            <button
-              onClick={() => {
-                setVisibleLogin(!visibleLogin);
-              }}
-            >
-              Login
-            </button>
+            <li>
+              <button
+                onClick={() => {
+                  setVisibleLogin(!visibleLogin);
+                }}
+              >
+                Login
+              </button>
+            </li>
           </ul>
         )}
 
