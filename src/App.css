@@ -292,9 +292,14 @@ footer {
   }
 
   .header-container ul li {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+
     margin: 5px 0;
   }
   .header button {
+    font-family: "Roboto", sans-serif;
+
     font-weight: bold;
   }
 }
