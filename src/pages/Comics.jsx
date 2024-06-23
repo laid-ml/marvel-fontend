@@ -4,12 +4,13 @@ import { useParams, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Cookies from "js-cookie";
-const Comics = ({ research }) => {
+const Comics = ({ research, setInputVisible }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [title, setTitle] = useState("");
   const [change, setChange] = useState();
+  const [input, setInput] = useState("");
 
   //   console.log(params);
   //   setChange(false);
@@ -21,6 +22,7 @@ const Comics = ({ research }) => {
     const fetchData = async () => {
       try {
         setTitle(`&title=${research}`);
+
         const response = await axios.get(
           `https://site--backend-marvel--y5mtbvcp7vlv.code.run/comics?skip=${page}${title}`
         );
@@ -31,8 +33,10 @@ const Comics = ({ research }) => {
         console.log(error);
       }
     };
+    setInputVisible(true);
+
     fetchData();
-  }, [page, research]);
+  }, [page, research, title]);
   return isLoading ? (
     <p>chargement</p>
   ) : (
@@ -88,6 +92,23 @@ const Comics = ({ research }) => {
           >
             1
           </button>
+          <input
+            className="page"
+            type="text"
+            placeholder="page"
+            onChange={(event) => {
+              setInput(event.target.value);
+            }}
+            value={input}
+          />
+          <button
+            onClick={() => {
+              setPage(input);
+            }}
+          >
+            go
+          </button>
+
           <button
             onClick={() => {
               setPage(474);
@@ -95,6 +116,7 @@ const Comics = ({ research }) => {
           >
             474
           </button>
+
           <button
             onClick={() => {
               setPage(page + 1);

@@ -11,6 +11,7 @@ const Header = ({
   visibleLogin,
   token,
   handleToken,
+  inputVisible,
 }) => {
   // const [search, setSearch] = useState("");
   const [menuVisible, setMenuVisible] = useState(false);
@@ -21,14 +22,17 @@ const Header = ({
     <header>
       <div className="header-container">
         <img src={logo} alt="marvel" />
-        <input
-          type="text"
-          name="search"
-          onChange={(event) => {
-            setResearch(event.target.value);
-          }}
-          value={research}
-        />
+        {!inputVisible ? null : (
+          <input
+            type="text"
+            name="search"
+            onChange={(event) => {
+              setResearch(event.target.value);
+            }}
+            value={research}
+          />
+        )}
+
         {token ? (
           <button
             onClick={() => {

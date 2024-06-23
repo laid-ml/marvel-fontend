@@ -218,6 +218,14 @@ button:active {
   transform: translateY(0);
 }
 
+.page {
+  background-color: #0056b3;
+  color: #fff;
+  height: 30px;
+  width: 80px;
+  text-align: center;
+}
+
 header,
 footer {
   color: green;
@@ -271,6 +279,11 @@ footer {
 
 .modal form p {
   color: red;
+}
+
+.title {
+  background-color: #fff;
+  font-weight: bold;
 }
 /* Responsive styles */
 @media (max-width: 768px) {

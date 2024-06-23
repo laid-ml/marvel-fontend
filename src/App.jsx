@@ -17,6 +17,7 @@ function App() {
   const [token, setToken] = useState(Cookies.get("marvel-token") || null);
   const [visible, setVisible] = useState(false);
   const [visibleLogin, setVisibleLogin] = useState(false);
+  const [inputVisible, setInputVisible] = useState(true);
 
   // const [cookiesComics, setCookiesComics] = useState([]);
   // const [cookiesCharac, setCookiesCharac] = useState([]);
@@ -44,13 +45,30 @@ function App() {
         visible={visible}
         setVisibleLogin={setVisibleLogin}
         visibleLogin={visibleLogin}
+        inputVisible={inputVisible}
       />
       <Routes>
-        <Route path="/" element={<Characters research={research} />} />
-        <Route path="/comics" element={<Comics research={research} />} />
-        <Route path="/comics/:id" element={<CharactersComics />} />
+        <Route
+          path="/"
+          element={
+            <Characters research={research} setInputVisible={setInputVisible} />
+          }
+        />
+        <Route
+          path="/comics"
+          element={
+            <Comics research={research} setInputVisible={setInputVisible} />
+          }
+        />
+        <Route
+          path="/comics/:id"
+          element={<CharactersComics setInputVisible={setInputVisible} />}
+        />
 
-        <Route path="/favoris" element={<Favoris />} />
+        <Route
+          path="/favoris"
+          element={<Favoris setInputVisible={setInputVisible} />}
+        />
       </Routes>
       {visible && (
         <ModalSignup setVisible={setVisible} handletoken={handleToken} />

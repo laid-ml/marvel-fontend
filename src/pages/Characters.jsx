@@ -4,12 +4,13 @@ import { useParams, Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-const Characters = ({ research }) => {
+const Characters = ({ research, setInputVisible }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [name, setName] = useState("");
   const [change, setChange] = useState();
+  const [input, setInput] = useState("");
 
   //   console.log(params);
   //   setchange(true);
@@ -29,6 +30,7 @@ const Characters = ({ research }) => {
       }
     };
     fetchData();
+    setInputVisible(true);
   }, [page, research]);
   //   useEffect(() => {
   //     const fetchCookies = async () => {
@@ -100,6 +102,23 @@ const Characters = ({ research }) => {
           >
             1
           </button>
+          <input
+            className="page"
+            type="text"
+            placeholder="page"
+            onChange={(event) => {
+              setInput(event.target.value);
+            }}
+            value={input}
+          />
+          <button
+            onClick={() => {
+              setPage(input);
+            }}
+          >
+            go
+          </button>
+
           <button
             onClick={() => {
               setPage(15);

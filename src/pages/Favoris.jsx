@@ -4,7 +4,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-const Favoris = () => {
+const Favoris = ({ setInputVisible }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [change, setChange] = useState();
@@ -50,6 +50,7 @@ const Favoris = () => {
     } else {
       setIsLoading(false);
     }
+    setInputVisible(false);
   }, [keysFavoris]);
 
   return isLoading ? (
