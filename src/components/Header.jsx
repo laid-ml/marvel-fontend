@@ -21,7 +21,9 @@ const Header = ({
   return (
     <header>
       <div className="header-container">
-        <img src={logo} alt="marvel" />
+        <Link to="/">
+          <img src={logo} alt="marvel" />{" "}
+        </Link>
         {!inputVisible ? null : (
           <input
             type="text"
