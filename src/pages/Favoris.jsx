@@ -39,9 +39,13 @@ const Favoris = ({ setInputVisible }) => {
           } catch (error) {
             console.log(error);
           }
+        } else {
+          newtab.push({});
         }
       }
       setData(newtab);
+      console.log(data);
+      console.log(newtab);
       setIsLoading(false);
     };
 
@@ -61,6 +65,8 @@ const Favoris = ({ setInputVisible }) => {
         {keysFavoris.map((elem, index) => {
           return (
             <div key={index}>
+              {console.log(elem.indexOf("charac"))}
+              {console.log(elem)}
               {elem.indexOf("charac") !== -1 ? (
                 <section className="charac">
                   <img
