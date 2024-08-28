@@ -11,7 +11,6 @@ import CharactersComics from "./pages/ChatactersComics";
 import Favoris from "./pages/Favoris";
 import ModalSignup from "./components/Modalsignup";
 import ModalLogin from "./components/ModalLogin";
-import { NotificationProvider } from "./NotificationContext";
 
 function App() {
   const [research, setResearch] = useState("");
@@ -36,56 +35,51 @@ function App() {
   };
 
   return (
-    <NotificationProvider>
-      <Router>
-        <Header
-          setResearch={setResearch}
-          research={research}
-          handleToken={handleToken}
-          token={token}
-          setVisible={setVisible}
-          visible={visible}
-          setVisibleLogin={setVisibleLogin}
-          visibleLogin={visibleLogin}
-          inputVisible={inputVisible}
+    <Router>
+      <Header
+        setResearch={setResearch}
+        research={research}
+        handleToken={handleToken}
+        token={token}
+        setVisible={setVisible}
+        visible={visible}
+        setVisibleLogin={setVisibleLogin}
+        visibleLogin={visibleLogin}
+        inputVisible={inputVisible}
+      />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Characters research={research} setInputVisible={setInputVisible} />
+          }
         />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Characters
-                research={research}
-                setInputVisible={setInputVisible}
-              />
-            }
-          />
-          <Route
-            path="/comics"
-            element={
-              <Comics research={research} setInputVisible={setInputVisible} />
-            }
-          />
-          <Route
-            path="/comics/:id"
-            element={<CharactersComics setInputVisible={setInputVisible} />}
-          />
+        <Route
+          path="/comics"
+          element={
+            <Comics research={research} setInputVisible={setInputVisible} />
+          }
+        />
+        <Route
+          path="/comics/:id"
+          element={<CharactersComics setInputVisible={setInputVisible} />}
+        />
 
-          <Route
-            path="/favoris"
-            element={<Favoris setInputVisible={setInputVisible} />}
-          />
-        </Routes>
-        {visible && (
-          <ModalSignup setVisible={setVisible} handletoken={handleToken} />
-        )}
-        {visibleLogin && (
-          <ModalLogin
-            setVisibleLogin={setVisibleLogin}
-            handleToken={handleToken}
-          />
-        )}
-      </Router>
-    </NotificationProvider>
+        <Route
+          path="/favoris"
+          element={<Favoris setInputVisible={setInputVisible} />}
+        />
+      </Routes>
+      {visible && (
+        <ModalSignup setVisible={setVisible} handletoken={handleToken} />
+      )}
+      {visibleLogin && (
+        <ModalLogin
+          setVisibleLogin={setVisibleLogin}
+          handleToken={handleToken}
+        />
+      )}
+    </Router>
   );
 }
 
